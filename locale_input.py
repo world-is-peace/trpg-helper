@@ -55,7 +55,8 @@ abc = {
 
 
 def get_symbol(s):
-    if str(get_locale())[2:-1] == 'ru' and abc.get(s) is not None:
+    print(get_locale())
+    if str(get_locale())[2:-1] != 'en' and abc.get(s) is not None:
         return abc.get(s)
     else:
         return s
