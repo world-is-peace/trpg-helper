@@ -204,6 +204,9 @@ class Hero:
     def __init__(self, name):
         self.name = name
         self.file = open('char/' + name + '.txt', 'w')
+        self.age = str()
+        self.gender = str()
+        self.race = str()
 
 
 class Adventure:

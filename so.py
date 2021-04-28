@@ -1,6 +1,7 @@
 # import pygame.freetype
 import sys
 import pygame.constants
+
 import classes_def as cd
 import os
 import locale_input as linp
@@ -8,7 +9,7 @@ import locale_input as linp
 ENTER = 13
 FPS = 30
 W = 1366
-H = 748
+H = 710
 CAPTION = 'TRPG Helper'
 MAPS = list()
 
@@ -424,6 +425,8 @@ def open_new_adventure():
     back_rect = back_t.get_rect()
     sc.blit(back_t, back_rect)
 
+    char = cd.Hero('Гунд')
+
 # ----------------------------------------------------------------------------------------------------------------------
     name = ''
     maps = list()
@@ -439,13 +442,15 @@ def open_new_adventure():
                              (500, 60), (5, 10, 3, 150), (400, 10),
                              40, (8, 235, 170), 'center'))
 # ----------------------------------------------------------------------------------------------------------------------
-    buttons.append(cd.Button('name',
+    '''buttons.append(cd.Button('name',
                              (700, 40), (255, 255, 255, 200), (50, 100),
                              21, (0, 0, 0), 'left', 'set_text_field', cut=0))
     buttons.append(cd.Button('Название',
                              (700, 40), (255, 255, 255, 0), (50, 150),
-                             37, (0, 0, 0), 'center'))
-
+                             37, (0, 0, 0), 'center'))'''
+    buttons.append(cd.Button(char.name + ' ' + char.age,
+                             (400, 400), (255, 255, 255, 200), (50, 200),
+                             21, (0, 0, 0), 'left'))
     mark = -1
     while mark == -1:
         clock.tick(FPS)
